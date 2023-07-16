@@ -1,0 +1,762 @@
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project
+$ git
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--config-env=<name>=<envvar>] <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project
+$ git global
+git: 'global' is not a git command. See 'git --help'.
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project
+$ git config
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <type>     value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project
+$ ls
+app.js  index.html  index.js
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project
+$ git init
+Initialized empty Git repository in C:/Users/HP/Desktop/Git project/.git/
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        app.js
+        index.html
+        index.js
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git add index.html
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        app.js
+        git_lab.txt
+        index.js
+
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git add .
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   app.js
+        new file:   git_lab.txt
+        new file:   index.html
+        new file:   index.js
+
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git commit -m "first commit"
+[master (root-commit) 96a7b92] first commit
+ 4 files changed, 11 insertions(+)
+ create mode 100644 app.js
+ create mode 100644 git_lab.txt
+ create mode 100644 index.html
+ create mode 100644 index.js
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$
+
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git diff
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git log
+commit 96a7b92e3986aafadf8a59dfd7dd40b8c9fe7042 (HEAD -> master)
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:15:57 2023 +0530
+
+    first commit
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git branch
+* master
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git add index.html
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git diff --cached
+diff --git a/index.html b/index.html
+index 9dfa6e4..a56c9fb 100644
+--- a/index.html
++++ b/index.html
+@@ -1,7 +1,7 @@
+ <!doctype html>
+ <html>
+   <head>
+-    <title>This is the title of the webpage!</title>
++    <title>This is the title of world</title>
+   </head>
+   <body>
+     <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git commit -m "sec commit"
+[master 2b71e34] sec commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git diff
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git log
+commit 2b71e34d1d10834c4ec2b3a245cf897a4239b645 (HEAD -> master)
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:19:49 2023 +0530
+
+    sec commit
+
+commit 96a7b92e3986aafadf8a59dfd7dd40b8c9fe7042
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:15:57 2023 +0530
+
+    first commit
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git diff 2b71e34d1d10834c4ec2b3a245cf897a4239b645
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git diff 96a7b92e3986aafadf8a59dfd7dd40b8c9fe7042
+diff --git a/index.html b/index.html
+index 9dfa6e4..a56c9fb 100644
+--- a/index.html
++++ b/index.html
+@@ -1,7 +1,7 @@
+ <!doctype html>
+ <html>
+   <head>
+-    <title>This is the title of the webpage!</title>
++    <title>This is the title of world</title>
+   </head>
+   <body>
+     <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    app.js
+        modified:   index.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git add .
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    app.js
+        modified:   index.js
+
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git commit -m "some file changes"
+[master c424258] some file changes
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+ delete mode 100644 app.js
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git log
+commit c4242582c4947044180b0275f8bb61e7c7a9cf1e (HEAD -> master)
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:24:23 2023 +0530
+
+    some file changes
+
+commit 2b71e34d1d10834c4ec2b3a245cf897a4239b645
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:19:49 2023 +0530
+
+    sec commit
+
+commit 96a7b92e3986aafadf8a59dfd7dd40b8c9fe7042
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:15:57 2023 +0530
+
+    first commit
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git checkout
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git checkout 2b71e34d1d10834c4ec2b3a245cf897a4239b645
+Note: switching to '2b71e34d1d10834c4ec2b3a245cf897a4239b645'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 2b71e34 sec commit
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project ((2b71e34...))
+$ git status
+HEAD detached at 2b71e34
+nothing to commit, working tree clean
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project ((2b71e34...))
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project ((2b71e34...))
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project ((2b71e34...))
+$ git checkout 96a7b92e3986aafadf8a59dfd7dd40b8c9fe7042
+Previous HEAD position was 2b71e34 sec commit
+HEAD is now at 96a7b92 first commit
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project ((96a7b92...))
+$ git status
+HEAD detached at 96a7b92
+nothing to commit, working tree clean
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project ((96a7b92...))
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project ((96a7b92...))
+$ git log
+commit 96a7b92e3986aafadf8a59dfd7dd40b8c9fe7042 (HEAD)
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:15:57 2023 +0530
+
+    first commit
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project ((96a7b92...))
+$ git checkout master
+Previous HEAD position was 96a7b92 first commit
+Switched to branch 'master'
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        app.js
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git add .
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git commit -m "Now added files"
+[master 85c3029] Now added files
+ 1 file changed, 1 insertion(+)
+ create mode 100644 app.js
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git log
+commit 85c30292f066e624626fcf4305aee5c35d8190a7 (HEAD -> master)
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:32:09 2023 +0530
+
+    Now added files
+
+commit c4242582c4947044180b0275f8bb61e7c7a9cf1e
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:24:23 2023 +0530
+
+    some file changes
+
+commit 2b71e34d1d10834c4ec2b3a245cf897a4239b645
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:19:49 2023 +0530
+
+    sec commit
+
+commit 96a7b92e3986aafadf8a59dfd7dd40b8c9fe7042
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:15:57 2023 +0530
+
+    first commit
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ Bbranching -----------
+bash: Bbranching: command not found
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git log --graph --oneline
+* 85c3029 (HEAD -> master) Now added files
+* c424258 some file changes
+* 2b71e34 sec commit
+* 96a7b92 first commit
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git branch dev
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git checkout dev
+Switched to branch 'dev'
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (dev)
+$ git branch
+* dev
+  master
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (dev)
+$ git status
+On branch dev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (dev)
+$ git add .
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (dev)
+$ git commit -m "dev changes"
+[dev 777601b] dev changes
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (dev)
+$ git status
+On branch dev
+nothing to commit, working tree clean
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (dev)
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (dev)
+$ git log --branch --oneline
+fatal: unrecognized argument: --branch
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (dev)
+$ git log --graph --oneline
+* 777601b (HEAD -> dev) dev changes
+* 85c3029 (master) Now added files
+* c424258 some file changes
+* 2b71e34 sec commit
+* 96a7b92 first commit
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (dev)
+$ git checkout master
+Switched to branch 'master'
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git merge dev
+Updating 85c3029..777601b
+Fast-forward
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git log --graph --oneline --all
+* 777601b (HEAD -> master, dev) dev changes
+* 85c3029 Now added files
+* c424258 some file changes
+* 2b71e34 sec commit
+* 96a7b92 first commit
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git add .
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git commit -m "diff"
+[master 6761205] diff
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git log --graph --oneline --all
+* 6761205 (HEAD -> master) diff
+* 777601b (dev) dev changes
+* 85c3029 Now added files
+* c424258 some file changes
+* 2b71e34 sec commit
+* 96a7b92 first commit
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git branch -d dev
+Deleted branch dev (was 777601b).
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git log --graph --oneline --all
+* 6761205 (HEAD -> master) diff
+* 777601b dev changes
+* 85c3029 Now added files
+* c424258 some file changes
+* 2b71e34 sec commit
+* 96a7b92 first commit
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git log
+commit 67612058f1edfd272f03369b04b65ecd7e7128b2 (HEAD -> master)
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:49:47 2023 +0530
+
+    diff
+
+commit 777601bb8fba90fe986841ad55e15f499c194237
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:43:08 2023 +0530
+
+    dev changes
+
+commit 85c30292f066e624626fcf4305aee5c35d8190a7
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:32:09 2023 +0530
+
+    Now added files
+
+commit c4242582c4947044180b0275f8bb61e7c7a9cf1e
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:24:23 2023 +0530
+
+    some file changes
+
+commit 2b71e34d1d10834c4ec2b3a245cf897a4239b645
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:19:49 2023 +0530
+
+    sec commit
+
+commit 96a7b92e3986aafadf8a59dfd7dd40b8c9fe7042
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:15:57 2023 +0530
+
+    first commit
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   app.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git stash
+Saved working directory and index state WIP on master: 6761205 diff
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git stash apply
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   app.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git add .
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git commit -m "stash add"
+[master 60bbb47] stash add
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$ git log
+commit 60bbb4786b16355673875c0465ef736709dc54b9 (HEAD -> master)
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 21:01:09 2023 +0530
+
+    stash add
+
+commit 67612058f1edfd272f03369b04b65ecd7e7128b2
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:49:47 2023 +0530
+
+    diff
+
+commit 777601bb8fba90fe986841ad55e15f499c194237
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:43:08 2023 +0530
+
+    dev changes
+
+commit 85c30292f066e624626fcf4305aee5c35d8190a7
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:32:09 2023 +0530
+
+    Now added files
+
+commit c4242582c4947044180b0275f8bb61e7c7a9cf1e
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:24:23 2023 +0530
+
+    some file changes
+
+commit 2b71e34d1d10834c4ec2b3a245cf897a4239b645
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:19:49 2023 +0530
+
+    sec commit
+
+commit 96a7b92e3986aafadf8a59dfd7dd40b8c9fe7042
+Author: AJAY <ajay25.ag>
+Date:   Sun Jul 16 20:15:57 2023 +0530
+
+    first commit
+
+HP@LAPTOP-24MCCUBV MINGW64 ~/Desktop/Git project (master)
+$
